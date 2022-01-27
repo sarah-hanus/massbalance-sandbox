@@ -1751,8 +1751,8 @@ class TIModel(TIModel_Parent):
 
             # mb_month = np.sum(mb_daily, axis=1)
             # more correct than using a mean value for days in a month
-            warnings.warn('be cautiuous when using get_daily_mb and test yourself if it does '
-                          'what you expect')
+            # warnings.warn('be cautiuous when using get_daily_mb and test yourself if it does '
+            #               'what you expect')
 
             # residual is in mm w.e per year, so SEC_IN_MONTH .. but mb_daily
             # is per day!
