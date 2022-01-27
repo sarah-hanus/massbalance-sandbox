@@ -778,7 +778,8 @@ def melt_f_calib_geod_prep_inversion(gdir, mb_type='mb_monthly', grad_type='cte'
     # just check if calibration worked ...
     spec_mb = mb_mod.get_specific_mb(heights=h, widths=w,
                                      year=np.arange(2000, ye, 1)).mean()
-    np.testing.assert_allclose(mb_geodetic, spec_mb, rtol=1e-2)
+    #this should not only be a relative assertion, because mass balance can be close to zero, then it does not work
+    np.testing.assert_allclose(mb_geodetic, spec_mb, rtol=1e-2, atol=1e-10)
     if mb_model_sub_class == TIModel_Sfc_Type:
         mb_mod.reset_pd_mb_bucket()
     # Fabi?: which starting year? I set it to 2000 !!! Is this right?
