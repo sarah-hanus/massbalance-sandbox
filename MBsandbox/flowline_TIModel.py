@@ -657,15 +657,32 @@ def run_with_hydro_daily(gdir, run_task=None, ref_area_from_y0=False,
         raise InvalidParamsError('run_with_hydro_daily only compatible with '
                                  "mb_elev_feedback='annual' (yes, even "
                                  "when asked for monthly hydro output).")
-    out = run_task(gdir, fixed_geometry_spinup_yr=fixed_geometry_spinup_yr,
-                   **kwargs)
+    try:
+        rgi_year = gdir.rgi_date.year
+    except AttributeError:
+        rgi_year = gdir.rgi_date
+
+    try:
+        init_model_filesuffix
+    except NameError:
+        init_model_filesuffix = None
+
+
+    if fixed_geometry_spinup_yr is not None and fixed_geometry_spinup_yr > rgi_year and init_model_filesuffix is None:
+        ys = fixed_geometry_spinup_yr
+        fixed_geometry_spinup_yr = None
+        out = run_task(gdir, ys = ys, fixed_geometry_spinup_yr=fixed_geometry_spinup_yr,
+                       **kwargs)
+    else:
+        out = run_task(gdir, fixed_geometry_spinup_yr=fixed_geometry_spinup_yr,
+                       **kwargs)
     if out is None:
         raise InvalidWorkflowError('The run task ({}) did not run '
                                    'successfully.'.format(run_task.__name__))
-
     do_spinup = fixed_geometry_spinup_yr is not None
     if do_spinup:
-        start_dyna_model_yr = out.y0
+        start_dyna_model_yr = out.y0 #is this the RGI date????
+
 
 
     # Mass balance model used during the run
