@@ -993,6 +993,10 @@ def process_isimip_data_no_corr(gdir, output_filesuffix='', fpath_temp=None,
             if climate_historical_filesuffix == "_daily_W5E5_dw":
                 path = 'https://cluster.klima.uni-bremen.de/~shanus/ISIMIP3b/flattened/daily/'
                 add = '_global_daily_flat_glaciers_2015_2100.nc'
+                # if year range end < 2020, it is historical ISIMIP3b files
+                if int(year_range[1]) < 2020:
+                    add = '_global_daily_flat_glaciers_1979_2014.nc'
+                    assert ssp == 'historical'
             else:
                 if cluster:
                     path = '/home/www/lschuster/isimip3b_flat/flat/daily/'
