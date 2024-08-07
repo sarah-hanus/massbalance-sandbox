@@ -40,11 +40,11 @@ if step == 'run_proj':
 #    grad_type = str(sys.argv[4])
 #print(type(start_ind), type(end_ind), mb_type, grad_type)
 ###############################
-import pymc3 as pm
+# import pymc3 as pm
 # 	conda install -c conda-forge python-graphviza
 import pandas as pd
 import xarray as xr
-import seaborn as sns
+# import seaborn as sns
 import pickle
 import ast
 
@@ -52,10 +52,10 @@ import matplotlib.pyplot as plt
 import matplotlib
 
 # %matplotlib inline
-import statsmodels as stats
+#import statsmodels as stats
 import scipy
 import scipy.stats as stats
-from IPython.core.pylabtools import figsize
+#from IPython.core.pylabtools import figsize
 import os
 import oggm
 from oggm import cfg, utils, workflow, tasks, graphics

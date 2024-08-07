@@ -1,4 +1,4 @@
-import pymc3 as pm
+#import pymc3 as pm
 # 	conda install -c conda-forge python-graphviza
 import numpy as np
 import pandas as pd
@@ -14,7 +14,7 @@ import matplotlib
 #import statsmodels as stats
 import scipy
 import scipy.stats as stats
-from IPython.core.pylabtools import figsize
+#from IPython.core.pylabtools import figsize
 import os
 import oggm
 from oggm import cfg, utils, workflow, tasks, graphics
