@@ -39,8 +39,8 @@ from MBsandbox.help_func import compute_stat, minimize_bias, \
 from MBsandbox.wip.help_func_geodetic import minimize_bias_geodetic, \
     optimize_std_quot_brentq_geod, get_opt_pf_melt_f
 
-import theano
-import theano.tensor as aet
+#import theano
+#import theano.tensor as aet
 
 
 # general parameters

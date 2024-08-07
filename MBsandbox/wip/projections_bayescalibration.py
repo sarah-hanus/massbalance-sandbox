@@ -40,8 +40,8 @@ from MBsandbox.mbmod_daily_oneflowline import process_era5_daily_data, TIModel, 
 from MBsandbox.help_func import compute_stat, minimize_bias, \
     optimize_std_quot_brentq
 
-import theano
-import theano.tensor as aet
+#import theano
+#import theano.tensor as aet
 
 from MBsandbox.mbmod_daily_oneflowline import \
     MultipleFlowlineMassBalance_TIModel

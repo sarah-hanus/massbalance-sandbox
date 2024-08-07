@@ -82,8 +82,8 @@ cfg.PATHS['working_dir'] = working_dir
 base_url = ('https://cluster.klima.uni-bremen.de/~oggm/gdirs/oggm_v1.4/'
             'L1-L2_files/elev_bands')
 
-import theano
-import theano.tensor as aet
+#import theano
+#import theano.tensor as aet
 
 
 from oggm.shop import gcm_climate
